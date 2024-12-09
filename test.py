@@ -33,7 +33,8 @@ def main():
     # Chromium Browser Path
     isHeadless = os.getenv('HEADLESS', 'false').lower() == 'true'
     
-    if isHeadless:
+    if isHeadless or os.getenv('CI', 'false').lower() == 'true':
+        print("im ci")
         from pyvirtualdisplay import Display
 
         display = Display(visible=0, size=(1920, 1080))
