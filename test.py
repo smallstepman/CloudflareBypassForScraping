@@ -32,11 +32,11 @@ def get_chromium_options(browser_path: str, arguments: list) -> ChromiumOptions:
 def main():
     # Chromium Browser Path
     isHeadless = os.getenv('HEADLESS', 'false').lower() == 'true'
-    print("im ci")
-    print(os.getenv('CI'))
+    logging.info("im ci")
+    logging.info(os.getenv('CI'))
 
     if isHeadless or os.getenv('CI') is not None:
-        print("im ci")
+        logging.info("im ci")
         from pyvirtualdisplay import Display
 
         display = Display(visible=0, size=(1920, 1080))
