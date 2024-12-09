@@ -16,7 +16,7 @@ jobs:
           chrome --version && which chrome
           echo "chrome_path=$(which chrome)\n" >> $GITHUB_OUTPUT
       - run: pip install -r requirements.txt
-      - run: pip install -r server-requirements.txt
+      - run: pip install -r server_requirements.txt
 
       - name: Run tests
         env: 
