@@ -15,6 +15,7 @@ jobs:
         run: |
           chrome --version && which chrome
           echo "chrome_path=$(which chrome)\n" >> $GITHUB_OUTPUT
+      - run: pip install -r requirements.txt
       - name: Run tests
         env: 
           CHROME_PATH: ${{ steps.output.browser-path.chrome_path }}
