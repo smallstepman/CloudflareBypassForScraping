@@ -12,9 +12,7 @@ jobs:
       - uses: browser-actions/setup-chrome@v1
       - name: Get chrome path 
         id: browser-path
-        run: |
-          chrome --version && which chrome
-          echo "chrome_path=$(which chrome)\n" >> $GITHUB_OUTPUT
+        run: echo "chrome_path=$(which chrome)\n" >> $GITHUB_OUTPUT
       - run: pip install -r requirements.txt
       - run: pip install -r server_requirements.txt
 
