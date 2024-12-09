@@ -47,4 +47,6 @@ jobs:
             && sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver \
             && sudo chmod +x /usr/bin/chromedriver
       - run: which google-chrome
+      - run: which chromedriver
+
       - run: python test.py
